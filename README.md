@@ -64,7 +64,7 @@ loading.tsx
 - NextResponse.redirect
 
 ### Route Groups
-A route group can be created by wrapping a folder's name in parenthesis: (folderName)
+A route group can be created by wrapping a folder's name in parenthesis : (folderName)
 
 ### Dynamic Routes
 A Dynamic Segment can be created by wrapping a folder's name in square brackets: [folderName]. 
@@ -74,4 +74,4 @@ For example, [id] or [slug].
 - Catch-all Segments : app/shop/[...slug]/page.js
 - Optional Catch-all Segments : app/shop/[[...slug]]/page.js
 
-![img.png](image/dynamic-routes.png)
+![img.png](image/dynamic-route.png)
