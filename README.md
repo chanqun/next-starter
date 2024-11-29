@@ -75,3 +75,82 @@ For example, [id] or [slug].
 - Optional Catch-all Segments : app/shop/[[...slug]]/page.js
 
 ![img.png](image/dynamic-route.png)
+
+### Parallel Routes
+
+- admin, user
+- login signup
+- loading.js, error.js
+
+```
+export default function Layout({
+  children,
+  team,
+  analytics,
+}: {
+  children: React.ReactNode
+  analytics: React.ReactNode
+  team: React.ReactNode
+}) {
+  return (
+    <>
+      {children}
+      {team}
+      {analytics}
+    </>
+  )
+}
+```
+
+### Intercepting Routes
+photo
+
+### Route Handlers
+Route Handlers allow you to create custom request handlers for a given route using the Web Request and Response APIs.
+
+app/api
+  route.js
+
+
+### Middleware
+Middleware allows you to run code before a request is completed. Then, based on the incoming request, you can modify the response by rewriting, redirecting, modifying the request or response headers, or responding directly.
+
+```
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+ 
+export function middleware(request: NextRequest) {
+  if (request.nextUrl.pathname.startsWith('/about')) {
+    return NextResponse.rewrite(new URL('/about-2', request.url))
+  }
+ 
+  if (request.nextUrl.pathname.startsWith('/dashboard')) {
+    return NextResponse.rewrite(new URL('/dashboard/user', request.url))
+  }
+}
+```
+
+Using Cookies, Setting Headers, CORS, Producing a Response
+Unit Testing
+
+### Internationalization
+
+## Data Fetching
+
+### Data Fetching and Caching
+fetch
+next.js unstable_cache
+
+parallel and sequential data fetching
+
+```
+const artistData = getArtist(username)
+const albumsData = getAlbums(username)
+
+// Initiate both requests in parallel
+const [artist, albums] = await Promise.all([artistData, albumsData])
+```
+
+preloading data
+
+### Server Actions and Mutations
