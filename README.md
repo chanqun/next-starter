@@ -154,3 +154,44 @@ const [artist, albums] = await Promise.all([artistData, albumsData])
 preloading data
 
 ### Server Actions and Mutations
+Server Actions are asynchronous functions thar are executed on the server.
+They can be called in Server and Client Components to handle from submissions and data mutations in Next.js applications
+
+### Incremental Static Regeneration (ISR)
+- Update static content without rebuilding the entire site
+- Reduce server load by serving prerendered, static pages for most requests
+- Ensure proper cache-control headers are automatically added to pages
+- Handle large amounts of content pages without long next build times
+
+## Rendering
+
+### Server Components
+React Server Components allow you to write UI that can be rendered and optionally cached on the server.
+In Next.js the rendering work is further split by route segments to enable streaming and partial rendering, and there are three
+different server rendering strategies
+- static rendering
+- dynamic rendering
+- streaming
+
+Benefits of Server Rendering
+- data fetching
+- security
+- caching
+- performance
+- initial page load and first contentful paint
+- search engine optimization and social network shareability
+- streaming
+
+### Client Components
+Client Components allow you to write interactive UI that is prerendered on the server and can use client JavaScript to run in the browser
+
+Benefits of client Rendering
+- interactivity : Client Components can use state, effects, and event listeners, meaning they can provide immediate feedback to the user and update the UI
+- Browser APIs : Client Components have access to browser APIs, geolocation or localStorage
+
+### Server and Client Composition Patterns
+![img.png](image/server-or-client.png)
+
+Sharing data between components
+use server-only package
+
